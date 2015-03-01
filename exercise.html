@@ -5,6 +5,52 @@
   <meta charset="utf-8">
 </head>
 <body>
-
+<header>
+  <h1>This Exercise is Self-Documenting!</h1>
+</header>
+<div id="columnwrapper">
+  <hr>
+  <h2>Andy is a little obsessed with recursion, ok?</h2>
+<div class="column">
+<section id="about">
+  <h3>About this Document/Exercise</h3>
+  <p>This goal of this exercise is to demonstrate how we can achieve effective contrast with a few simple css rules. Rather than dummy content, this exercise document instead contains some basic documentation of some of the html and css techniques used in its creation.</p>
+  <p>The design of the document is taken from the newsletter example on page 66 of <em>The Non-Designers Design Book</em>.</p>
+</section>
+<section id="HTML">
+  <h3>HTML in this document</h3>
+  <h4>Overall html design</h4>
+  <p>Notice how the html of this document is structured to mark meaningful elements we will apply visual styling to later on. A brief glance at the example design in our textbook tells us we need a header section, two columns, and sections within those columns. Notice how HTML reflects this structure. Learning how to parse a design into html elements in an important part of web design, and we will practice it further later this week.</p>
+  <h4>The &lt;link&gt; element</h4>
+  <p>Though the document structure for columns and headings are set up in the html, the visual styling of the document is still being set by the default style sheet. Thus, it doesn't look much like the example in the book, or much like anything at all. To fix this we will include an external style sheet to apply some CSS and give us a style resembling the book's newsletter. To include an external stylesheet we use the &lt;link&gt; element in the head section of our html document. The &lt;link&gt; element allows us to include external stylesheets (and some other resources) in html. Don't get confused! &lt;link&gt; is not for creating hyperlinks, we create those with the &lt;a&gt; tag.</p>
+  <p>To add our external stylesheet, called "style.css" and located in the "css" folder of this repository, add the following to the head section:<br>
+    <code>&lt;link href="css/style.css" rel="stylesheet"&gt;</code></p>
+  <h4>The &lt;hr&gt; element</h4>
+  <p> The &lt;hr&gt; element creates a section divider (horizontal rule). It's not a terribly great example of keeping design and structure seperate, so we usually avoid them. Use borders instead wherever possible. However, the design in the book was very difficult to emulate without one (since it called for a heading with a unique background color, a space, and then a horizontal line).</p>
+</section>
+</div>
+<div class="column">
+  <section id="stylesheet">
+    <h3>Contents of the external stylesheet</h3>
+    <p>A brief explanation of some of the css properties used in the external stylesheet</p>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing">Box-sizing</a>: This property changes how the width property affects elements. By default, the with property changes the width of content, with padding added after the fact (so an element set to 50% width with 2% horizontal padding would have an effective width of 54%). Setting it to "border-box" causes elements to include padding inside the width specified by the width property. This makes it easier to computer width for columns, so we set box-sizing to border box on our column class.</li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing">Letter-spacing</a>: This property lets us change the space between letters, which we use to achieve the effect seen in our subheading</li>
+      <li>Float: We've seen float before, but this time we use it to create two columns. Notice we float <em>both</em> columns to the left using the column class. This is the easiest and most reliable way to create columns</li>
+      <li>Margin: We've seen margin before, but note how I have used it throughout this stylesheet, especially on the headings. Default heading margins almost always need to be over-ridden. Notice that I zeroed out existing margins, then added margin-top to create space between sections, while keeping the heading visually close to the section it introduces.</li>
+    </ul>
+  </section>
+  <section id="overrides">
+    <h3>Overrides</h3>
+    <p>To alter our document's appearance and improve contrast, we will override some of the style rules contained in our external style sheet with a style section. Create a style element in the head section of this document and add the following css rules to that style element.</p>
+    <ul>
+      <li>First, we need to add the following link element to our head element, so we have the additonal font we need: &lt;link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'&gt;</li>
+      <li>Next add rules applying this font to the h1, h3 and h4 headings</li>
+      <li>Add rules setting the background-color for the header tag to black, and the color for this tag to white</li>
+      <li>Add rules applying a font weight of bold and a color of #791195 for h3 and h4</li>
+    </ul>
+  </section>
+</div>
+</div>
 </body>
 </html>
